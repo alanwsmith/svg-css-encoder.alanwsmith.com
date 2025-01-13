@@ -12,23 +12,18 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
     <meta name="theme-color" content="#000000" />
 
-    <title>Alan's HTML Template</title>
-    <meta name="description" content="My HTML template for getting started with a new site" />
+    <title>Alan's SVG To CSS Converter</title>
+    <meta name="description" content="A single purpose tool that turns an SVG string of text into a set of CSS properties" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:description" content="My HTML template for getting started with a new site" />
-    <meta property="og:title" content="Alan's HTML Template" />
-    <meta property="og:url" content="https://html-template.alanwsmith.com/" />
+    <meta property="og:description" content="A single purpose tool that turns an SVG string of text into a set of CSS properties" />
+    <meta property="og:title" content="Alan's SVG To CSS Converter" />
+    <meta property="og:url" content="https://svg-to-css.alanwsmith.com/" /> 
+    <meta property="og:image" content="https://svg-to-css.alanwsmith.com/images/og-image.jpg" />
 
     <!--
-      Switch to proper og-image
-      <meta property="og:image" content="https://html-template.alanwsmith.com/images/og-image.jpg" />
-    -->
-    <!-- START: Remove sample -->
-    <meta property="og:image" content="https://html-template.alanwsmith.com/images/og-image-for-html-template.jpg" />
-    <!-- END: Remove sample -->
-
     <link rel="stylesheet" href="/styles/yt-player.css" />
     <script type="module" src="/scripts/yt-player.js"></script>
+    -->
 
     <style>
 
@@ -241,66 +236,11 @@ ul > :where(:not(:first-child)) {
 
     <main class="flow"> 
       <hgroup>
-        <h1>Alan's HTML Template</h1>
-        <p>A copy/paste way to start a new site</p>
+        <h1>Alan's SVG To CSS Converter</h1>
       </hgroup>
-      <h2>Introduction</h2>
-      <p>I like using sub-domains for experiments. 
-        You can check them out at <a href="https://links.alanwsmith.com/">links.alanwsmith.com</a>.
-        This page and
-        its supporting files are my current template for getting
-        started with a new one.
-      </p>
-      <p>
-        Most of the sites start off as 
-        single pages. I include the styles and scripts in the 
-        page directly as a result. 
-      </p>
-      <h2>Work-In-Progress</h2>
-      <p>
-        The first version of this template is still under development.
-        Current work is focused on the youtube embedding web component
-        which will reside here: 
-        <a href="https://yt-player.alanwsmith.com/">yt-player.alanwsmith.com</a>
-      </p>
 
-      <h2>YouTube Embed Example</h2>
-      <yt-player video="EzPZ9VCCRmU">
-        <noscript>JavaScript not available to load video player</noscript>
-      </yt-player>
-
-      <h2>Notes</h2>
-      <ul>
-        <li>
-          The main content area is centered vertically if it's 
-          not large enough to fill the screen
-        </li>
-        <li>
-          The page includes the YouTube IFrame API for loading videos
-          programmatically. It doesn't attempt to auto-start. 
-        </li>
-        <li>
-          TODO: The YouTube embed can be used with multiple videos
-          on the page
-        </li>
-        <li>
-          TODO: The YouTube embed automatically adds control buttons
-        </li>
-        <li>
-          TODO: Provide a light/dark mode color switcher
-        </li>
-        <li>
-          TODO: Responsive images
-        </li>
-        <li>
-          TODO: Responsive videos
-        </li>
-      </ul>
-
-      <h2>This is an H2 Example Headline</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada finibus risus sit amet gravida. Sed id nibh non ipsum convallis commodo.</p>
-      <p>Nullam ornare luctus semper. Donec libero sem, dapibus id nibh non, venenatis pretium diam. Sed elementum, tortor vel euismod accumsan, mi risus posuere magna, non volutpat velit nulla vel leo.</p>
-      <p>Pellentesque eget ex eleifend, interdum arcu ut, pulvinar risus. Praesent placerat eu libero id ultricies.</p>
+      <h2>Paste Your SVG Here</h2>
+      <textarea cols="50" rows="20"></textarea>
     </main>
 
     <footer>
@@ -311,67 +251,5 @@ ul > :where(:not(:first-child)) {
         <a href="https://links.alanwsmith.com">other sites</a>
       </div>
     </footer>
-
-    <!--
-    <script>
-
-      var tag = document.createElement("script")
-      tag.src = "https://www.youtube.com/iframe_api"
-      var firstScriptTag = document.getElementsByTagName("script")[0]
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
-      const ytPlayers = []
-      function onYouTubeIframeAPIReady() {
-        ytPlayers[0] = new YT.Player("ytPlayer-1", {
-          height: "195",
-          width: "320",
-          videoId: "_YUzQa_1RCE",
-          playerVars: {
-            "playsinline": 1
-          },
-          events: {
-            "onReady": onPlayerReady,
-            "onStateChange": onPlayerStateChange
-          }
-        })
-      }
-
-      function onPlayerReady(event) {
-        console.log("ytPlayer: ready")
-        addYtButtons(event.target)
-      }
-
-      function onPlayerStateChange(event) {
-        if (event.data == -1) {
-          console.log("ytPlayer: unstarted")
-        } else if (playerStatus == 0) {
-          console.log("ytPlayer: ended")
-        } else if (playerStatus == 1) {
-          console.log("ytPlayer: playing")
-        } else if (playerStatus == 2) {
-          console.log("ytPlayer: paused")
-        } else if (playerStatus == 3) {
-          console.log("ytPlayer: buffering")
-        } else if (playerStatus == 5) {
-          console.log("ytPlayer: cued")
-        }
-      }
-
-      function addYtButtons(player) {
-        const playerEl = player.g
-        const playerWrapper = playerEl.parentElement
-        const buttonWrapperEl = document.createElement("div")
-        const playButtonEl = document.createElement("button")
-        playButtonEl.innerHTML = "Play"
-        playButtonEl.addEventListener("click", (event, playerEl) => { playVideo(event, playerEl) })
-        buttonWrapperEl.appendChild(playButtonEl)
-        playerWrapper.appendChild(buttonWrapperEl)
-      }
-
-      function playVideo(event, playerEl) {
-        console.log(event)
-        console.log(playerEl)
-      }
-    </script>
--->
   </body>
 </html>
